@@ -2,6 +2,7 @@
 /**
 *	@param hostname,username,password and Database Name.
 *	@param connect_type can be PDO or MySqli;
+*   PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 */
 	$connectDetails=array(
 			"hostname"=>"",
@@ -11,12 +12,4 @@
 			"connect_type"=>strtoupper("MySqli"),
 		);
 
-	$PDO_Details=array(
-
-
-		);
-
-	$Mysqli_Details=array(
-			
-
-		)
+	

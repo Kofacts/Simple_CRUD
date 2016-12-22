@@ -87,7 +87,7 @@
 					$create_db=$this->type->query($query);
 					if($create_db->execute())
 					{
-						die("Cool");
+						return true;
 
 					}
 					else{
@@ -110,7 +110,7 @@
 
 					if(isset($connect_db))
 					{
-						die("You inserted into DB using Mysqli Method");
+						return true;
 					}
 					else{
 						throw new Exception("Error!");
@@ -145,7 +145,7 @@
 							return $row;
 						}
 						else{
-							die("False");
+							return false;
 						}
 			}
 			else{
@@ -165,7 +165,7 @@
 					return $row;
 				}
 				else{
-					die("Fuck you mean");
+					return false;
 				}
 				
 			}
@@ -188,10 +188,10 @@
 					$get=$query->fetch_assoc();
 					$row=$get;
 					return $row;
-					die("I Just saw some Shit");
+					
 				}
 				else{
-					die("Fuck Uou");
+					return false;
 				}
 			}
 			else{
@@ -240,7 +240,7 @@
 				$update_query=$this->type->query($query);
 				if(isset($update_query))
 				{
-					die("Done!");
+					return true;
 				}
 				
 			}
@@ -263,7 +263,7 @@
 
 				if(isset($update_query))
 				{
-					die("You Just Updated your DB with PDO");
+					return true;
 				}
 				else{
 					return false;
@@ -300,10 +300,10 @@
 				$delete_db=$query->execute();
 				if(isset($delete_db))
 				{
-					die("Just Removed");
+					return true;
 				}
 				else{
-					die("Can't remove");
+					return false;
 				}
 
 			}

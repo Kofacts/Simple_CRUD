@@ -1,7 +1,7 @@
 # Simple_CRUD
 A Simple Create,Read,Update,Delete Library for your PHP Web App. Basically, there wouldn't be any need to tinker with annoying Query Codes.
 Leverages Both MYSQLi and PDO.
-Inspired by Laravel's Sleek Query System.
+
 
 # How to use?
 1. Clone this Repo which will then be stored in your chosen directory as Simple_CRUD

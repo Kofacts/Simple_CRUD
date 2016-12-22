@@ -42,9 +42,10 @@ Leverages Both MYSQLi and PDO.
 
 And then loop through all the fields.
 
-<code>foreach($posts as $row)
+<code>
+foreach($posts as $row)
 	{
-		echo $row['username']."<br>";
+		echo $row['username'];
 	}
 </code>
 

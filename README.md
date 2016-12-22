@@ -29,7 +29,7 @@ Inspired by Laravel's Sleek Query System.
 
 6. Now you Have done the needful, What can you do with all this.
 
-# Some of the Basic Method you can use.
+# Some of the Basic Methods you can use.
 
 1. create($tablename,$fields) : The tablename is the name of the Tablename you wish to add Data to, while the fields are the array of data you wish to  insert values into.  From the code below, the user_details is the tablename, while the array are yes, array of values you wish to insert data into.
 

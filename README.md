@@ -14,6 +14,11 @@ Then Require it using
 
 <code>composer require scrud/scrud</code>
 
+Which will then be added to your Composer.json dependencies.
+
+Or
+## ---------------- Using the lib as a Class  ------
+
 1. Clone this Repo which will then be stored in your chosen directory as Simple_CRUD
 
 <code> git clone https://github.com/kofacts/Simple_CRUD.git"</code>

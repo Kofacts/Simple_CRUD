@@ -16,6 +16,12 @@
 		protected $id;
 		protected $field=[];
 
+
+		/** 
+		* @param Empty.
+		* Instantiates the connection type.
+		***/
+
 		public function __construct()
 		{
 			require_once("../src/config.php");
@@ -66,6 +72,10 @@
 		}
 
 
+		/**
+		* 	@param $tablename - Name of the table to be worked with and $fields.
+		*
+		**/
 
 		public function create($tablename,$fields)
 
@@ -126,6 +136,9 @@
 
 		}
 
+		/**
+		* @param $tablename : Gets all the data from the table.
+		**/
 
 		public function get($tablename)
 		{
@@ -171,6 +184,12 @@
 			}
 
 		}
+
+		/**
+		* @param $tablename,$id and then the value.
+		* So it can have this form, Name of get_where("users","username","chima");
+		**/
+
 		public function get_where($tablename,$id,$value)
 		{
 			$this->tablename=$tablename;
@@ -211,6 +230,10 @@
 
 		}
 
+		/**
+		*	@param $tablename,$field,$id and value.
+		*   Basically this can be update("users",array("username"=>"string","password"=>"anotherstring"),"id",1)
+		*/
 		public function update($tablename,$field,$id,$value)
 		{
 			$this->tablename=$tablename;
@@ -272,7 +295,10 @@
 			}
 		}
 
-
+		/**
+		*	@param $tablename, id and then value.
+		*   This can take the form, delete("users","username","Rapheal");
+		*/
 		public function delete($tablename,$id,$value)
 		{
 			//Delete from $tablename, val

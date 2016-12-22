@@ -14,13 +14,16 @@ Leverages Both MYSQLi and PDO.
 
 4. Fill in the necessary details and DB_Type. MYSQLI or PDO.
 
-<code> 	$connectDetails=[
+<code>
+
+ 	$connectDetails=[
 			"hostname"=>"hostname",
 			"username"=>"username",
 			"password"=>"password",
 			"DB_NAME"=>"database name",
 			"connect_type"=>strtoupper("pdo or mysqli"),
 		];
+
 </code>
 
 5. Inside your Main Page, say index.php, instantiate a Scrud Object.

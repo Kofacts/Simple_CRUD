@@ -14,7 +14,7 @@
 		protected $wherefields;
 		protected $value;
 		protected $id;
-		protected $field;
+		protected $field=[];
 
 		public function __construct()
 		{
@@ -211,20 +211,101 @@
 
 		}
 
-		public function update($tablename,$id,$field,$value)
+		public function update($tablename,$field,$id,$value)
 		{
 			$this->tablename=$tablename;
 			$this->id=$id;
 			$this->value=$value;
 			$this->field=$field;
 
-			if($this->Mode=="MYSQL")
+			if($this->Mode=="MYSQLI")
 			{
-				//query="UPDATE $tablename SET $id=$id WHERE $field=$value";
-				die("Hello");
+				//$query="UPDATE $this->tablename SET $this->field=$this->value WHERE $this->id=$this->id";
+				//die(implode(",",array_values($this->field)));
+				$getKey=key($this->field);
+				$getVal=current($this->field);
+				//Walk through the array
+
+				array_walk($this->field, function(&$value,$key)
+				{
+					$value="{$key}='{$value}'";
+				});
+
+				$update_vals=implode(",", $this->field);
+				
+				$query=sprintf("UPDATE %s SET %s WHERE %s=%s",$this->tablename,$update_vals,$this->id,$this->value);
+				//$query=key($this->field)."<br>";
+				//die($arr['username']);
+				var_dump($query);
+				$update_query=$this->type->query($query);
+				if(isset($update_query))
+				{
+					die("Done!");
+				}
+				
 			}
 			else{
-				die("Hell Awasits");
+				//This is to Update using PDO.
+				$getKey=key($this->field);
+				$getVal=current($this->field);
+				//Walk through the array
+
+				array_walk($this->field, function(&$value,$key)
+				{
+					$value="{$key}='{$value}'";
+				});
+
+				$update_vals=implode(",", $this->field);
+				$query=sprintf("UPDATE %s SET %s WHERE %s=%s",$this->tablename,$update_vals,$this->id,$this->value);
+				//Run the query
+				$query=$this->type->prepare($query);
+				$update_query=$query->execute();
+
+				if(isset($update_query))
+				{
+					die("You Just Updated your DB with PDO");
+				}
+				else{
+					return false;
+				}
+
+			}
+		}
+
+
+		public function delete($tablename,$id,$value)
+		{
+			//Delete from $tablename, val
+			$this->tablename=$tablename;
+			$this->id=$id;
+			$this->value=$value;
+			if($this->Mode=="MYSQLI")
+			{
+				$query=sprintf("DELETE FROM %s WHERE %s=%s",$this->tablename,$this->id,$this->value);
+				$delete_db=$this->type->query($query);
+
+				if(isset($delete_db))
+				{
+					return true;
+				}
+				else{
+					return false;
+				}
+			}
+			else{
+				//PDO.
+				//By the Way, The Config.php file should NEVER be empty.
+				$query=sprintf("DELETE FROM %s WHERE %s=%s",$this->tablename,$this->id,$this->value);
+				$query=$this->type->prepare($query);
+				$delete_db=$query->execute();
+				if(isset($delete_db))
+				{
+					die("Just Removed");
+				}
+				else{
+					die("Can't remove");
+				}
+
 			}
 		}
 

@@ -18,6 +18,12 @@ Inspired by Laravel's Sleek Query System.
 
 <code>$scrud = new Scrud($tablename);</code>
 
+Before you Proceed, this Lib. is built with abstraction in mind, making everything, out of the box for you.
+
+First, locate the config.pj folder and edit the corresponding details there.
+The DB Name, Server, hostname, password and all that.
+Then you can proceed to the next step below.
+
 5. To Insert Data into DB, Simply use:
 
 <code>
@@ -45,4 +51,11 @@ Inspired by Laravel's Sleek Query System.
 		echo $row['username']."<br>";
 	}
 	NB: "$posts must be equal to $posts" as declared above.
+</code>
+
+7. Get Post with Id. You can use the code below that is after instantiating your class. For this, i am making use of $news.
+
+<code>
+	$no=$news->get_where("user_details","id",1);
+	echo $no['password'];
 </code>

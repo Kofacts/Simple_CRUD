@@ -17,3 +17,36 @@ Inspired by Laravel's Sleek Query System.
 4. instantiate the class.
 
 <code>$scrud = new Scrud($tablename);</code>
+
+5. To Insert Data into DB, Simply use:
+
+<code>
+
+	$news= new Scrud;
+	$news->create("user_details",array("username"=>"Ricesss","password"=>"pico4421ss"));
+
+	You can increase the array as you wish.
+	Where user_details is the tablename, and array are the column and values data respectively.
+</code>
+
+
+
+6. To Get a Post.
+
+<code>
+	Instantiate the class first via
+	$news = new Scrud;
+	Then access the db using the tablename.
+
+	$posts=$news->get("user_details");
+
+	To Get all the Data from the Db, simply do.
+
+	foreach($posts as $row)
+	{
+		echo $row['username']."<br>";
+	}
+
+	NB: "$posts must be equal to $posts" as declared above.
+
+</code>

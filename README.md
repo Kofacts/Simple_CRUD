@@ -4,56 +4,75 @@ A Simple Create,Read,Update,Delete Library for your PHP Web App. Basically, ther
 Inspired by Laravel's Sleek Query System.
 
 # How to use?
-1. Hit up the terminal and glone this repo using :
+1. Clone this Repo which will then be stored in your chosen directory as Simple_CRUD
 
-<code> git clone https://github.com/Kofacts/Simple_CRUD.git</code> 
+<code> git clone https://github.com/kofacts/Simple_CRUD.git"</code>
 
-2. The File will be stored with the Name, Simple_CRUD.
+2. Open the File
 
-3. Next, include or require the file src/Srud or
+3. Locate the src/ directory and Open the config.php
 
-<code>require{Scrud/Scrud} for Composer [Little Fixing though]</code>
+4. Fill in the necessary details and DB_Type. MYSQLI or PDO.
 
-4. instantiate the class.
-
-<code>$scrud = new Scrud($tablename);</code>
-
-Before you Proceed, this Lib. is built with abstraction in mind, making everything, out of the box for you.
-
-First, locate the config.pj folder and edit the corresponding details there.
-The DB Name, Server, hostname, password and all that.
-Then you can proceed to the next step below.
-
-5. To Insert Data into DB, Simply use:
-
-<code>
-	$news= new Scrud;
-	$news->create("user_details",array("username"=>"Ricesss","password"=>"pico4421ss"));
-	You can increase the array as you wish.
-	Where user_details is the tablename, and array are the column and values data respectively.
+<code> 	$connectDetails=[
+			"hostname"=>"hostname",
+			"username"=>"username",
+			"password"=>"password",
+			"DB_NAME"=>"database name",
+			"connect_type"=>strtoupper("pdo or mysqli"),
+		];
 </code>
 
+5. Inside your Main Page, say index.php, instantiate a Scrud Object.
 
+<code> $scrud= new Scrud;</code>
 
-6. To Get a Post.
+6. Now you Have done the needful, What can you do with all this.
 
-<code>Instantiate the class first via
-	$news = new Scrud;
-	Then access the db using the tablename.
+# Some of the Basic Method you can use.
 
-	$posts=$news->get("user_details");
+1. create($tablename,$fields) : The tablename is the name of the Tablename you wish to add Data to, while the fields are the array of data you wish to  insert values into.  From the code below, the user_details is the tablename, while the array are yes, array of values you wish to insert data into.
 
-	To Get all the Data from the Db, simply do.
+<code>$scrud->create("user_details",array("username"=>"Ricesss","password"=>"pico4421ss")); </code>
 
-	foreach($posts as $row)
+2. get($tablename) : params is just $tablename. This would get all fields from DB. Simple instantiate the Scrud Class. eg
+
+<code>$posts=$scrud->get("user_details");</code>
+
+And then loop through all the fields.
+
+<code>foreach($posts as $row)
 	{
 		echo $row['username']."<br>";
-	}
-	NB: "$posts must be equal to $posts" as declared above. 
-</code>
+	}</code>
 
-7. Get Post with Id. You can use the code below that is after instantiating your class. For this, i am making use of $news.
+3. get_where($tablename,$id,$value): This would accept params tablename,id/field and the value you wish to get. To use, simply do
 
-<code>$no=$news->get_where("user_details","id",1);
-	  echo $no['password'];
-</code>
+<code>$value=$scrud->get_where($tablename,$id,$value)</code>
+And then use
+
+<code>echo $value['username'];</code>
+
+4. update($tablename,$field,$id,$value); This would accept params $tablename,$field [arrays],id to be update and value. To use, simply do,
+
+<code>$scrud->update("user_details",array("username"=>"Rapheal","password"=>"skjf..anything"),"id",1);</code>
+
+5. delete($tablename,$id,$value): This would accept params $tablename,$id to delete and then value. To Use, Simply do,
+
+<code>$scrud->delete("user_details","id",2);</code>
+
+# Inspiration
+The Concept is inspired by Codeigniter's Sleep Query System. Make it simple, and very simple has always been the name.
+
+# Contribute
+
+There are so many features that should be added to this platform. Hey, Don't just leave, you can always contribute by pulling a request.
+
+# This would Help Me, How should i thank you.
+
+Nah, Nada, Don't thank Me. 
+Actually, you can thank me by Staring. 
+Em, :smile: I think that is just it.
+
+# Licence
+MIT

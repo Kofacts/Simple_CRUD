@@ -4,6 +4,16 @@ Leverages Both MYSQLi and PDO.
 
 
 # How to use?
+
+## With Composer
+First install Composer using
+
+<code>composer install</code>
+
+Then Require it using
+
+<code>composer require scrud/scrud</code>
+
 1. Clone this Repo which will then be stored in your chosen directory as Simple_CRUD
 
 <code> git clone https://github.com/kofacts/Simple_CRUD.git"</code>

@@ -15,7 +15,6 @@ Leverages Both MYSQLi and PDO.
 4. Fill in the necessary details and DB_Type. MYSQLI or PDO.
 
 <code>
-
  	$connectDetails=[
 			"hostname"=>"hostname",
 			"username"=>"username",
@@ -23,7 +22,6 @@ Leverages Both MYSQLi and PDO.
 			"DB_NAME"=>"database name",
 			"connect_type"=>strtoupper("pdo or mysqli"),
 		];
-
 </code>
 
 5. Inside your Main Page, say index.php, instantiate a Scrud Object.
@@ -47,7 +45,8 @@ And then loop through all the fields.
 <code>foreach($posts as $row)
 	{
 		echo $row['username']."<br>";
-	}</code>
+	}
+</code>
 
 3. get_where($tablename,$id,$value): This would accept params tablename,id/field and the value you wish to get. To use, simply do
 

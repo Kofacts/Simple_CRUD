@@ -4,12 +4,12 @@
 *	@param connect_type can be PDO or MySqli;
 *   PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 */
-	$connectDetails=array(
-			"hostname"=>"",
-			"username"=>"",
-			"password"=>"",
-			"DB_NAME"=>"",
-			"connect_type"=>strtoupper("MySqli"),
-		);
+	$connectDetails=[
+			"hostname"=>"localhost",
+			"username"=>"root",
+			"password"=>"pico4421",
+			"DB_NAME"=>"loginlib",
+			"connect_type"=>strtoupper("pdo"),
+		];
 
 	

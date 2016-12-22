@@ -37,8 +37,7 @@ Then you can proceed to the next step below.
 
 6. To Get a Post.
 
-<code>
-	Instantiate the class first via
+<code>Instantiate the class first via
 	$news = new Scrud;
 	Then access the db using the tablename.
 
@@ -50,12 +49,11 @@ Then you can proceed to the next step below.
 	{
 		echo $row['username']."<br>";
 	}
-	NB: "$posts must be equal to $posts" as declared above.
+	NB: "$posts must be equal to $posts" as declared above. 
 </code>
 
 7. Get Post with Id. You can use the code below that is after instantiating your class. For this, i am making use of $news.
 
-<code>
-	$no=$news->get_where("user_details","id",1);
-	echo $no['password'];
+<code>$no=$news->get_where("user_details","id",1);
+	  echo $no['password'];
 </code>

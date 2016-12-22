@@ -1,6 +1,6 @@
 # Simple_CRUD
 A Simple Create,Read,Update,Delete Library for your PHP Web App. Basically, there wouldn't be any need to tinker with annoying Query Codes.
-
+Leverages Both MYSQLi and PDO.
 Inspired by Laravel's Sleek Query System.
 
 # How to use?
@@ -62,7 +62,7 @@ And then use
 <code>$scrud->delete("user_details","id",2);</code>
 
 # Inspiration
-The Concept is inspired by Codeigniter's Sleep Query System. Make it simple, and very simple has always been the name.
+The Concept is inspired by Codeigniter's Sleek Query System. Make it simple, and very simple has always been the name.
 
 # Contribute
 
@@ -73,6 +73,8 @@ There are so many features that should be added to this platform. Hey, Don't jus
 Nah, Nada, Don't thank Me. 
 Actually, you can thank me by Staring. 
 Em, :smile: I think that is just it.
+
+<b>PS:</b> Some Basic Touches still going on.
 
 # Licence
 MIT
